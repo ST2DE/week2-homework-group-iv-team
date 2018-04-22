@@ -3,21 +3,21 @@ const app = express();
 
 app.use('/public', express.static(__dirname + '/public'));
 
-app.set('view engine', 'ejs');
+//app.set('view engine', 'ejs');
 app.get('/', function (req, res) {
-    res.render('index')
+    res.sendFile('/page/index.html', { root: __dirname });
 })
 
 app.get('/yuting', function (req, res) {
-    res.render('rainstop');
+    res.sendFile('/page/yuting.html', { root: __dirname });
 })
 
 app.get('/judy', function (req, res) {
-    res.render('judy');
+    res.sendFile('/page/judy.html', { root: __dirname });
 })
 
 app.get('/mike', function (req, res) {
-    res.render('mike');
+    res.sendFile('/page/mike.html', { root: __dirname });
 })
 
 app.listen(3000, function () {

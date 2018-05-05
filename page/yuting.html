@@ -1,14 +1,31 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="/style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1"> <!--responsive to mobile devices-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> <!--Latest compiled and minified CSS-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!--jQuery library-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script> <!--Popper JS-->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> <!--Latest compiled JavaScript-->
-    </head>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--responsive to mobile devices-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"> <!--Latest compiled and minified CSS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!--jQuery library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script> <!--Popper JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> <!--Latest compiled JavaScript-->
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
 
     <body>
         <nav class="navbar navbar-expand-sm bg-info navbar-dark">
@@ -32,13 +49,171 @@
         </nav>
 
         <div class="jumbotron text-center">
-            <h1>＊Out Team Page＊</h1>
-            <p>Resize this responsive page to see the effect!</p>
+            <h1>＊Git 操作筆記＊</h1>
+            <p>個人小小整理</p>
         </div>
 
+        <h2>第一步：<strong>安裝</strong></h2>
+        <ol>
+            <li>點選<a href="https://desktop.github.com/">這裡</a></li>
+            <li>按下 Download 吧！：）</li>
+        </ol><br>
 
+        <h2>第二步：<strong>使用者（初次）設定</strong></h2>
+        <ol>
+            <li>打開你的 Terminal &#8594; <a href="https://gitbook.tw/chapters/command-line/command-line.html">Terminal 相關指令介紹</a></li>
+            <li>輸入以下指令，OOO部分自行修改</li>
+            <code>$ git config --global user.name "OOOOOOO"</code>
+            <br>
+            <code>$ git config --global user.email "OOOOO@OOOOOOO"</code>
+            <li>確認一下自己的設定</li>
+            <code>$ git config --list</code>
+            <li>設定別名(依照個人喜好，也可不做XD)</li>
+            <code>$ git config --global alias.'別名(alias)' '指令'</code>
+        </ol><br>
 
+        <h2>第三步：<strong>新增 Repository</strong></h2>
+        <p>全新開始～</p>
+        <ol>
+            <li>建立一個要做專案的資料夾並 <code>$ cd</code> 切換過去</li>
+            <li>輸入以下指令，進行初始化（讓 Git 對這個目錄開始版控）</li>
+            <code>$ git init</code>
+            <blockquote>會在該目錄中建立 .git 資料夾</blockquote>
+        </ol>
+        <p>本來就有專案～</p>
+        <ol>
+            <li>直接<code>$ cd</code> 切換到專案目錄</li>
+            <li>同上</li>
+        </ol>
+        <p>從 Github 上抓～<i>（Homework都是用這個！！！）</i></p>
+        <ol>
+            <li>直接 <code>$ cd</code> 切換到要進行專案的目錄</li>
+            <li>輸入以下指令，進行clone</li>
+            <code>$ git clone 'url'</code>
+            <blockquote>會在該目錄中建立一個該 Repository 的資料夾</blockquote>
+        </ol><br>
 
-
+        <h2>第四步：<strong>進行 Git 專案控管</strong></h2>
+        <p>簡易概念圖</p>
+        <img src="https://i.imgur.com/PJf8pm4.png" alt="Git流程圖" style="width:500px;height:600px;"><br>
+        <p>常用指令</p>
+        <table>
+            <tr>
+                <th>指令</th>
+                <th>功能說明</th>
+            </tr>
+            <tr>
+                <td><code>$ git clone</code></td>
+                <td>複製儲存庫</td>
+            </tr>
+            <tr>
+                <td><code>$ git init</code><br>(initiate)</td>
+                <td>初始化版本庫</td>
+            </tr>
+            <tr>
+                <td><code>$ git status</code></td>
+                <td>當前的 Git 狀態(不時就打一下這個指令做確認)</td>
+            </tr>
+            <tr>
+                <td><code>$ git add</code></td>
+                <td>加入追蹤(tracking)</td>
+            </tr>
+            <tr>
+                <td><code>$ git rm</code><br>(remove)</td>
+                <td>刪除檔案</td>
+            </tr>
+            <tr>
+                <td><code>$ git commit</code></td>
+                <td>提交目前暫存區的修改，會<b>產生log紀錄</b></td>
+            </tr>
+            <tr>
+                <td><code>$ git log</code></td>
+                <td>查看所有歷史記錄</td>
+            </tr>
+            <tr>
+                <td><code>$ git push</code></td>
+                <td>提取本地儲存庫的檔案並推送至遠端儲存庫</td>
+            </tr>
+            <tr>
+                <td><code>$ git branch</code></td>
+                <td>列出分支</td>
+            </tr>
+        </table><br>
+        <p>指令詳細介紹</p>
+        <ol>
+            <li><code>$ git clone</code></li>
+                <ul>
+                    <li><code>$ git clone 'url'</code></li><br>
+                    將url(網址)的遠端儲存庫複製到自己的電腦，目錄裡會產生一個同名資料夾
+                </ul>
+                <ul>
+                    <li><code>$ git clone 'url' 'name'</code></li><br>
+                    複製到自己的電腦，並將資料夾命名為name
+                </ul>
+            <li><code>$ git add</code></li>
+                <ul>
+                    <li><code>$ git add 'file'</code></li><br>
+                    將file(資料夾名稱)加入追蹤
+                </ul>
+                <ul>
+                    <li><code>$ git add -u</code></li><br>
+                    只將修改過的(edited)檔案加入追蹤
+                </ul>
+                <ul>
+                    <li><code>$ git add --all</code>或是<code>$ git add .</code></li><br>
+                    將所有檔案加入追蹤
+                </ul>
+                <ul>
+                    <li><code>$ git add -i</code></li><br>
+                    進入互動模式，依照指示操作唄
+                </ul>
+            <li><code>$ git commit</code></li>
+                <ul>
+                    <li><code>$ git commit</code></li><br>
+                    將目前暫存區的修改進行提交，進入編輯 message(打上提交的內容備註，會<strong>顯示在log記錄</strong>)階段
+                </ul>
+                <ul>
+                    <li><code>$ git commit -m 'message'</code></li><br>
+                    直接加上message一起提交，跳過編輯階段
+                </ul>
+            <li><code>$ git remote</code></li>
+                <ul>
+                    <li><code>$ git remote (show)</code></li><br>
+                    顯示遠端儲存庫名稱(<strong>預設為origin</strong>)，show可省略
+                </ul>
+                <ul>
+                    <li><code>$ git remote -v</code></li><br>
+                    顯示遠端儲存庫名稱及位置
+                </ul>
+            <li><code>$ git push</code></li>
+                <ul>
+                    <li><code>$ git push</code></li><br>
+                    將本地分支(<strong>預設為master</strong>)已提交的(committed)檔案推送至遠端儲存庫分支(<strong>預設為origin</strong>)
+                </ul>
+                <ul>
+                    <li><code>$ git push 'remote' 'branch'</code></li><br>
+                    將本地分支(branch)的檔案推送至遠端儲存庫分支(remote)<br>
+                    &#8594; 意即<code>$ git push</code>的作用等於<code>$ git push 'remote' 'branch'</code>
+                </ul>
+            <li><code>$ git branch</code></li>
+                <ul>
+                    <li><code>$ git branch</code></li><br>
+                    列出本地分支
+                </ul>
+                <ul>
+                    <li><code>$ git branch -r</code></li><br>
+                    列出遠端分支
+                </ul>
+                <ul>
+                    <li><code>$ git branch -a</code></li>
+                    <br>
+                    列出所有分支
+                </ul>
+                <ul>
+                    <li><code>$ git branch -v</code></li>
+                    <br>
+                    列出每個分支<strong>最後的提交</strong>
+                </ul>
+        </ol>
     </body>
 </html>

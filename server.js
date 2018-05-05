@@ -9,15 +9,15 @@ app.get('/', function (req, res) {
 })
 
 app.get('/yuting', function (req, res) {
-    res.sendFile('./page/yuting.html', { root: __dirname });
+    res.sendFile('yuting.html', { root: __dirname });
 })
 
 app.get('/judy', function (req, res) {
-    res.sendFile('./page/judy.html', { root: __dirname });
+    res.sendFile('judy.html', { root: __dirname });
 })
 
 app.get('/mike', function (req, res) {
-    res.sendFile('./page/mike.html', { root: __dirname });
+    res.sendFile('mike.html', { root: __dirname });
 })
 
 app.listen(3000, function () {
